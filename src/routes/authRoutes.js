@@ -13,9 +13,9 @@ router.post("/register", async (req, res) => {
 try {
     const {email,username,password} = req.body;
 
-    if(!username || !email || !password){
-        return res.status(400).json({ message: "Preenche todos os campos"});
-    }
+   /* if( !username || !email || !password ){
+        return res.status(400).json({ message: "Preenche todos os campos blablablabla"});
+    }*/
     if(password.length < 6){
         return res.status(400).json({ message: "Palavrapasse tem de conter pelo menos 6 caracteres"});
     }
@@ -71,7 +71,7 @@ router.post("/login", async (req, res) => {
    try {
 
     const { email, password } = req.body;
-    if (!email || !password ) return res.status(400).json({ message: "Preenche todos os campos"});
+    if (!email || !password ) return res.status(400).json({ message: "Preenche todos os campos"}); 
     
     const user = await User.findOne({ email });
     if(!user) return res.status(400).json({ message: "Usuário não existe"});
