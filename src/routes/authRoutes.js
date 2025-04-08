@@ -13,9 +13,9 @@ router.post("/register", async (req, res) => {
 try {
     const {email,username,password} = req.body;
 
-   /* if( !username || !email || !password ){
+    if( !username || !email || !password ){
         return res.status(400).json({ message: "Preenche todos os campos blablablabla"});
-    }*/
+    }
     if(password.length < 6){
         return res.status(400).json({ message: "Palavrapasse tem de conter pelo menos 6 caracteres"});
     }
