@@ -55,7 +55,8 @@ res.status(200).json({
         _id: user._id,
         username: user.username,
         email: user.email,
-        profileImage: user.profileImage
+        profileImage: user.profileImage,
+        createdAt: new Date(),
     },
 });
 
@@ -88,6 +89,8 @@ id: user._id,
 username: user.username,
 email: user.email,
 profileImage: user.profileImage,
+createdAt: user.createdAt,
+
 },
     });
 
